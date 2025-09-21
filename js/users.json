@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": "admin001",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Administrator",
+      "email": "admin@edutech.com",
+      "department": "Administration"
+    },
+    {
+      "id": "teacher001",
+      "password": "teacher123",
+      "role": "teacher",
+      "name": "John Smith",
+      "email": "john.smith@edutech.com",
+      "department": "Mathematics"
+    },
+    {
+      "id": "teacher002",
+      "password": "teacher456",
+      "role": "teacher",
+      "name": "Emily Davis",
+      "email": "emily.davis@edutech.com",
+      "department": "Science"
+    },
+    {
+      "id": "accountant001",
+      "password": "account123",
+      "role": "accounts",
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@edutech.com",
+      "department": "Finance"
+    },
+    {
+      "id": "student001",
+      "password": "student123",
+      "role": "student",
+      "name": "Mike Wilson",
+      "email": "mike.wilson@edutech.com",
+      "grade": "10th Grade",
+      "rollNumber": "STU001"
+    },
+    {
+      "id": "student002",
+      "password": "student456",
+      "role": "student",
+      "name": "Lisa Chen",
+      "email": "lisa.chen@edutech.com",
+      "grade": "11th Grade",
+      "rollNumber": "STU002"
+    },
+    {
+      "id": "parent001",
+      "password": "parent123",
+      "role": "parent",
+      "name": "Lisa Brown",
+      "email": "lisa.brown@email.com",
+      "studentId": "student001"
+    },
+    {
+      "id": "parent002",
+      "password": "parent456",
+      "role": "parent",
+      "name": "Robert Chen",
+      "email": "robert.chen@email.com",
+      "studentId": "student002"
+    }
+  ]
+} 

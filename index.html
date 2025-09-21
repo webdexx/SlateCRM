@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | School Management System</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Promotional Slider -->
+        <div class="slider-section">
+            <div class="slider-container">
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2>Welcome to Future Education</h2>
+                        <p>Experience the next generation of school management with our cutting-edge platform designed for excellence.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2>Unified Management</h2>
+                        <p>Seamlessly manage students, staff, and administrative tasks from a single, powerful interface.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2>Data-Driven Insights</h2>
+                        <p>Make informed decisions with real-time analytics and comprehensive reporting tools.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2>Secure & Reliable</h2>
+                        <p>Your data is protected with enterprise-grade security and 99.9% uptime guarantee.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="login-section">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="logo">
+                        <i class="fas fa-school"></i>
+                        <span>EduTech</span>
+                    </div>
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to access your dashboard</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="userId" name="userId" placeholder="Enter your ID" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="login-btn" id="loginBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="login-footer">
+                    <p>© 2024 EduTech. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

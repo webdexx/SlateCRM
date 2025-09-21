@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard | EduTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/parent.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-school"></i>
+                <span>EduTech</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search child's progress, notices..." aria-label="Search">
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-item">
+                <button class="notification-btn" id="notificationBtn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+            </div>
+            <div class="nav-item">
+                <button class="profile-btn" id="profileBtn">
+                    <img src="/assets/avatar-parent.jpg" alt="Profile" class="profile-img">
+                    <span class="profile-name" id="parentName">Parent</span>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="#" id="viewProfile"><i class="fas fa-user"></i> View Profile</a>
+                    <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="admin-info">
+                <img src="/assets/avatar-parent.jpg" alt="Parent" class="admin-avatar">
+                <div class="admin-details">
+                    <h4 id="parentFullName">Parent Name</h4>
+                    <p id="parentRole">Parent</p>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-menu">
+                <li class="nav-item active"><a class="nav-link" href="#overview"><i class="fas fa-gauge"></i><span>Overview</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#child-progress"><i class="fas fa-child"></i><span>Child Progress</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#attendance"><i class="fas fa-user-check"></i><span>Attendance</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#grades"><i class="fas fa-chart-line"></i><span>Grades & Reports</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#homework"><i class="fas fa-book"></i><span>Homework</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#notices"><i class="fas fa-bullhorn"></i><span>School Notices</span><span class="badge" id="noticesCount">3</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#communication"><i class="fas fa-comments"></i><span>Communication</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="header-content">
+                    <h1>Welcome back, <span id="headerParentName">Parent</span></h1>
+                    <p>Monitor your child's academic progress and stay connected with the school</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="downloadReport"><i class="fas fa-download"></i> Download Report</button>
+                    <button class="btn btn-primary" id="contactTeacher"><i class="fas fa-envelope"></i> Contact Teacher</button>
+                </div>
+            </div>
+
+            <!-- Child Selection -->
+            <div class="child-selector">
+                <div class="selector-header">
+                    <h3>Select Child</h3>
+                </div>
+                <div class="child-cards" id="childCards">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <section class="stats-grid" id="overview">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="stat-content">
+                        <h3 id="attendancePercent">94%</h3>
+                        <p>Attendance</p>
+                        <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>+3% this month</span></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="stat-content">
+                        <h3 id="avgGrade">88%</h3>
+                        <p>Average Grade</p>
+                        <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>+2.5% this term</span></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+                    <div class="stat-content">
+                        <h3 id="homeworkCount">5</h3>
+                        <p>Pending Homework</p>
+                        <div class="stat-change"><i class="fas fa-clock"></i><span>Due this week</span></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="stat-content">
+                        <h3 id="rank">Top 15%</h3>
+                        <p>Class Rank</p>
+                        <div class="stat-change positive"><i class="fas fa-arrow-up"></i><span>Improved</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-card" id="child-progress">
+                    <div class="card-header">
+                        <h2>Academic Progress</h2>
+                        <button class="btn-icon" id="refreshProgress" aria-label="Refresh progress"><i class="fas fa-rotate"></i></button>
+                    </div>
+                    <div class="card-content">
+                        <div class="progress-list" id="progressList">
+                            <!-- Subject-wise progress bars -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-card" id="attendance">
+                    <div class="card-header">
+                        <h2>Attendance Summary</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="attendance-summary">
+                            <div class="progress-ring">
+                                <svg viewBox="0 0 36 36">
+                                    <path class="ring-bg" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="ring-progress" id="attendanceRing" stroke-dasharray="94, 100" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage" id="attendancePercentText">94%</text>
+                                </svg>
+                            </div>
+                            <ul class="attendance-meta">
+                                <li><i class="fas fa-check"></i> Present: <span id="presentDays">94</span></li>
+                                <li><i class="fas fa-xmark"></i> Absent: <span id="absentDays">6</span></li>
+                                <li><i class="fas fa-calendar"></i> Total: <span id="totalDays">100</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-card" id="grades">
+                    <div class="card-header">
+                        <h2>Recent Grades</h2>
+                        <button class="btn-icon" id="refreshGrades" aria-label="Refresh grades"><i class="fas fa-rotate"></i></button>
+                    </div>
+                    <div class="card-content">
+                        <div class="grades-list" id="gradesList">
+                            <!-- Recent grades -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-card" id="homework">
+                    <div class="card-header">
+                        <h2>Homework Status</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="homework-list" id="homeworkList">
+                            <!-- Homework items -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-grid">
+                <section class="dashboard-card" id="notices">
+                    <div class="card-header">
+                        <h2>School Notices</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="notice-list" id="noticeList">
+                            <!-- Notices populated by JS -->
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-card" id="communication">
+                    <div class="card-header">
+                        <h2>Teacher Communication</h2>
+                        <button class="btn btn-primary" id="newMessage"><i class="fas fa-plus"></i> New Message</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="communication-list" id="communicationList">
+                            <!-- Recent messages -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/js/parent.js"></script>
+</body>
+</html>
